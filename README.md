@@ -1,12 +1,16 @@
 # MLOps Project Group 62
 
 ## Project Goal
+The main goal of this project is to forecast wind power production at the Klim Windfarm. 
 
 ## Used frameworks
+The project will initially employ the pytorch-forecasting library for model construction. Due to limited experience with this framework, there is consideration for a potential transition to PyTorch Lightning, known for its simpler model implementation approach compared to standard PyTorch.
 
 ## Data
+We will use the following dataset -> http://www.imm.dtu.dk/courses/02427/comp_ex_4_scripts_2011.zip. However, we intend to migrate to an alternative dataset that provides a continuous stream of new and diverse data.
 
 ## Models
+We expect to use some kind of auto-regressive model like RNN, LSTM or Transformer. Variations might be interesting too for better forecasting results, like the Temporal Fusion Transformer.
 
 ## Project structure
 
