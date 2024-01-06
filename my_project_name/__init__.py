@@ -1,0 +1,2 @@
+from my_project_name.models.model import MyNeuralNet
+from my_project_name.predict_model import predict
