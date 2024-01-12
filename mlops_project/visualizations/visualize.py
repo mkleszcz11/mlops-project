@@ -2,8 +2,8 @@ from tsai.inference import load_learner
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from tsai.basics import *
 
-sys.path.append(str(Path(__file__).parents[2]))
-from mlops_project.models.model import Forecaster
+sys.path.append(str(Path(__file__).parents[1]))
+from models.model import Forecaster
 
 
 def test_split(X, y, splits) -> ndarray:
