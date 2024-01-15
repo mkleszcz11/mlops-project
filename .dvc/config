@@ -1,0 +1,4 @@
+[core]
+    remote = dvc-bucket
+['remote "dvc-bucket"']
+    url = gs://mlops-dvc-435
