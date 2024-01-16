@@ -105,7 +105,7 @@ end of the project.
 >
 > Answer:
 
---- question 1 fill here ---
+--- 62 ---
 
 ### Question 2
 > **Enter the study number for each member in the group**
@@ -116,7 +116,7 @@ end of the project.
 >
 > Answer:
 
---- question 2 fill here ---
+--- s232429, s232002, s231954 ---
 
 ### Question 3
 > **What framework did you choose to work with and did it help you complete the project?**
@@ -129,7 +129,7 @@ end of the project.
 >
 > Answer:
 
---- question 3 fill here ---
+--- We used the third-party framework "tsai", it is an open-source deep learning package built on top of Pytorch & fastai focused on state-of-the-art techniques for time series tasks like classification, regression, forecasting, imputation etc. It is actively developed by timeseriesAI. We used already build in model (TSForecaster class), from tsai to define our model, we also used build in functions like fit_one_cycle() from the same package to train our model or get_forecasting_splits() to split data, which facilitated development process significantly. Standard functionalities from popular packages like sklearn or numpy were also used. Moreover we used tutorials provided by timeseriesAI to develop and align our model. ---
 
 ## Coding environment
 
@@ -148,7 +148,11 @@ end of the project.
 >
 > Answer:
 
---- question 4 fill here ---
+--- We used conda for managing our dependencies. The list of dependencies was auto-generated using pipreqs. At the beginning of the project we agreed to use version 3.11 of python. Dependencies were updated on the ongoing basis via github, so whenever they changed on our master branch each contributor were able to update them locally. To get a complete copy of our development environment, one would have to run the following commands:
+1. Install conda (might differ among different operating systems, please refer to the official documentation)
+2. conda create -n myenv python=3.11
+3. conda activate myenv
+4. pip install -r requirements.txt ---
 
 ### Question 5
 
@@ -174,7 +178,7 @@ end of the project.
 >
 > Answer:
 
---- question 6 fill here ---
+--- We used mainly ruff formating top be complaiant with PEP8. These concepts are helpful even in the smaller projects like this one, with the bigger ones I would risk to say that they are inevitable. They simply facelitate the entire work, as each developer knows what to expect from code. ---
 
 ## Version control
 
@@ -193,7 +197,7 @@ end of the project.
 >
 > Answer:
 
---- question 7 fill here ---
+--- In total we have implemented 7 tests. We are testing corectness of data such as if data arrays have expected shapes, if types are as expected, if all values are represented (no infinite or Nan values etc.). Moreover we are testing main model fuctionalities such as data loading, training or model saving. ---
 
 ### Question 8
 
@@ -208,7 +212,7 @@ end of the project.
 >
 > Answer:
 
---- question 8 fill here ---
+--- The total code coverage of code is 97%, it was tested with "coverage" tool on all our source code. Even though this value is close to 100%, we are more than certain that our code is not error-free. Our unit tests cover almost every line, demonstrating which indicates that they can run without an error. However, they have their limitations. They might ensure each line is executed, but they don't encompass every possible way these lines might be used in real-world scenarios. This is a critical distinction because real-world usage often presents cases that our controlled test environments fail to anticipate. ---
 
 ### Question 9
 
@@ -223,7 +227,7 @@ end of the project.
 >
 > Answer:
 
---- question 9 fill here ---
+--- In our project, we used both branches and pull requests (PRs). For each separate feature, we created a dedicated branch, and following its merge, we removed it from the main repository. The main branch was our base, and all contributions to it were strictly through PRs. This process involved reviews of the most important features before their integration. Additionally, our workflow often included working on separate forks, providing a parallel development environment. This approach allowed us to maintain a clean, organized codebase and facilitated efficient collaboration among team members. This methodology is used to carefully manage code via review of code changes to ensure quality and consistency in project development. ---
 
 ### Question 10
 
@@ -238,7 +242,8 @@ end of the project.
 >
 > Answer:
 
---- question 10 fill here ---
+--- We did make use of DVC in the following way:
+ ---
 
 ### Question 11
 
@@ -254,7 +259,21 @@ end of the project.
 >
 > Answer:
 
---- question 11 fill here ---
+--- We have organised our CI into two file in which we are testing the corectness of the data and main model functionalities as well compatibility with good coding practicies. We are running unitesting (7 tests in total) and ruff. In both cases we are running our pipeline on push event and pull request to master branch. 
+
+We are testing it for ubuntu, macos and windows operating systems (all marked as latest). In the test we are setting up the entire development, then we are installing dependecies. Throughout this process we are making use of cashing, which improves tests speed. Finally we are testing our code with pytest
+
+An example of triggered workflow can be seen here:
+https://github.com/corusm/mlops-project/actions/runs/7530338558/job/20496483800
+
+We are also continously checking our code compatibilty with good coding practicies with ruff. Entire process is very simmilar to the one described with unittesting.
+1. We are testing on Windows, MacOS and Ubuntu
+2. Installing dependencies utilizing caching
+3. running 'ruff check' and 'ruff format' on the entire code. 
+
+An example of triggered workflow can be seen here:
+https://github.com/corusm/mlops-project/actions/runs/7535717724/job/20512110831?pr=9
+ ---
 
 ## Running code and tracking experiments
 
