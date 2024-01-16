@@ -5,18 +5,18 @@ from mlops_project.models.model import Forecaster
 
 from tests import _PATH_DATA
 
-class TestForecaster:
 
+class TestForecaster:
     @pytest.fixture
     def forecaster(self):
         return Forecaster()
 
     def test_model_initialization(self, forecaster):
         assert isinstance(forecaster, Forecaster), "Forecaster instance is not created properly"
-        assert 'n_layers' in forecaster.arch_config, "Architecture config missing 'n_layers'"
+        assert "n_layers" in forecaster.arch_config, "Architecture config missing 'n_layers'"
 
     def test_data_loading(self, forecaster):
-        PATH_PROCESSED = os.path.join(_PATH_DATA, "processed")  
+        PATH_PROCESSED = os.path.join(_PATH_DATA, "processed")
         X, y, _, _, splits = forecaster.get_data(PATH_PROCESSED)
         assert X is not None and y is not None, "Data not loaded correctly"
         assert len(splits) == 3, "Incorrect number of splits"

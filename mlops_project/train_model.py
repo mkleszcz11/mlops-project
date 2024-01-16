@@ -1,4 +1,3 @@
-from tsai.basics import *
 from models.model import Forecaster
 
 

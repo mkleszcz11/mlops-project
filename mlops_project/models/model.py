@@ -1,4 +1,4 @@
-from tsai.basics import *
+from tsai.basics import TSForecaster, load_object, mse, mae, np, os
 
 # By using tsai module the model can be reduced just to the architecture definition.
 
@@ -29,7 +29,7 @@ class Forecaster:
             padding_patch=True,  # padding_patch
         )
 
-    def get_data(self, path) -> Any:
+    def get_data(self, path):
         feature_target_data = np.load(os.path.join(path, "processed.npz"))
         X = feature_target_data["array1"]
         y = feature_target_data["array2"]
@@ -40,7 +40,7 @@ class Forecaster:
 
         return X, y, preproc_pipe, exp_pipe, splits
 
-    def train_model(self) -> Any:
+    def train_model(self):
         PATH_PROCESSED = "data/processed"
 
         X, y, preproc_pipe, exp_pipe, splits = self.get_data(PATH_PROCESSED)
